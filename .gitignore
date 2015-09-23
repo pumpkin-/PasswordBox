@@ -21,3 +21,4 @@ antLauncher/bin
 antLauncher/gen
 local.properties
 *.log
+misc.xml

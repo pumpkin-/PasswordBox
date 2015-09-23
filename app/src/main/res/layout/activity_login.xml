@@ -14,8 +14,7 @@
             android:id="@+id/et_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="请输入您的初始密码"
-            android:background="@mipmap/"/>
+            android:hint="请输入您的初始密码"/>
 
         <EditText
             android:id="@+id/et_password"
