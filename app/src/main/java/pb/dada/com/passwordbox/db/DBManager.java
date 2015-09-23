@@ -5,7 +5,11 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import pb.dada.com.passwordbox.bean.SecurityBox;
+import pb.dada.com.passwordbox.utils.Utils;
 
 /**
  * Created by Administrator on 2015/9/22.
@@ -25,7 +29,8 @@ public class DBManager {
         }
         db.beginTransaction();
         try {
-            db.execSQL("INSERT INTO " + DBHelper.TABLE_SECURITY_BOX + " VALUES(?, ?)", new Object[]{securityBox.getAcountName(), securityBox});
+            db.execSQL("INSERT INTO " + DBHelper.TABLE_SECURITY_BOX + " VALUES(?, ?)",
+                    new Object[]{securityBox.getAcountName(), Utils.object2Bytes(securityBox)});
             db.setTransactionSuccessful();
         } catch (Exception e) {
             e.printStackTrace();
@@ -48,7 +53,7 @@ public class DBManager {
             db.execSQL("UPDATE " + DBHelper.TABLE_SECURITY_BOX + " set "
                             + DBHelper.COLUMN_SECURITY_BOX_OBJECT + " =? WHERE "
                             + DBHelper.COLUMN_SECURITY_BOX_NAME + " =? ",
-                    new Object[]{securityBox, securityBox.getAcountName()});
+                    new Object[]{Utils.object2Bytes(securityBox), securityBox.getAcountName()});
             db.setTransactionSuccessful();
         } catch (Exception e) {
             e.printStackTrace();
@@ -100,7 +105,26 @@ public class DBManager {
         return cursor;
     }
 
+    public static List<SecurityBox> getAllSecurityBoxs(Context context) {
+        List<SecurityBox> securityBoxes = new ArrayList<SecurityBox>();
 
+        Cursor cursor = queryAll(context);
+        try {
+            while (cursor != null && cursor.moveToNext()) {
+                byte[] bytes = cursor.getBlob(cursor.getColumnIndex(DBHelper.COLUMN_SECURITY_BOX_OBJECT));
+                SecurityBox securityBox = Utils.Bytes2Object(bytes);
+                securityBoxes.add(securityBox);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return securityBoxes;
+    }
+
+    /**
+     * 关闭DB
+     */
     public static void closeDB() {
         if (db.isOpen()) {
             db.close();

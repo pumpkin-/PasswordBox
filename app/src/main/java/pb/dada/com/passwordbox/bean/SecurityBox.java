@@ -16,6 +16,16 @@ public class SecurityBox {
     //时间
     private String createTime;
 
+    public SecurityBox() {
+    }
+
+    public SecurityBox(String title, String acountName, String password, String annotation, String createTime) {
+        this.title = title;
+        this.acountName = acountName;
+        this.password = password;
+        this.annotation = annotation;
+        this.createTime = createTime;
+    }
 
     public void setTitle(String title) {
         this.title = title;
