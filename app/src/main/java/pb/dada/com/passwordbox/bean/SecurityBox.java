@@ -8,7 +8,7 @@ public class SecurityBox {
     //标题
     private String title;
     //用户名
-    private String username;
+    private String acountName;
     //密码
     private String password;
     //注释
@@ -25,12 +25,12 @@ public class SecurityBox {
         return title;
     }
 
-    public String getUsername() {
-        return username;
+    public String getAcountName() {
+        return acountName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setAcountName(String acountName) {
+        this.acountName = acountName;
     }
 
     public String getPassword() {
