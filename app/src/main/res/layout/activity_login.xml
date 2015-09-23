@@ -14,14 +14,15 @@
             android:id="@+id/et_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="username" />
+            android:hint="请输入您的初始密码"
+            android:background="@mipmap/"/>
 
         <EditText
             android:id="@+id/et_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:hint="password" />
+            android:hint="再次确认输入初始密码" />
     </LinearLayout>
 
     <ImageView
