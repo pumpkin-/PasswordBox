@@ -46,7 +46,7 @@ public class DBHelper extends SQLiteOpenHelper {
             try {
                 // 用户保险箱信息表
                 db.execSQL("CREATE TABLE IF NOT EXISTS " + TABLE_SECURITY_BOX
-                        + "(key_id INTEGER PRIMARY KEY , "
+                        + "( "
                         + COLUMN_SECURITY_BOX_NAME + " CHAR ,"
                         + COLUMN_SECURITY_BOX_OBJECT + " BLOB)");
             } catch (Exception e) {

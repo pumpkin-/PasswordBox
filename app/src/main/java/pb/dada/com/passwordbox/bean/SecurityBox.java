@@ -1,9 +1,11 @@
 package pb.dada.com.passwordbox.bean;
 
+import java.io.Serializable;
+
 /**
  * Created by Administrator on 2015/9/22.
  */
-public class SecurityBox {
+public class SecurityBox implements Serializable {
 
     //标题
     private String title;
