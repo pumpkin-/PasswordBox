@@ -7,6 +7,7 @@ android:background="#ffffff">
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     android:orientation="vertical" >
 
     <ImageView
@@ -22,10 +23,23 @@ android:background="#ffffff">
         android:layout_height="1dp"
         android:layout_marginTop="50dp"
         android:background="#eae9e9" />
+=======
+    android:background="#ffffff">
+
+
+    <ImageView
+        android:id="@+id/iv_launcher_logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:src="@mipmap/img_password_box_iclauncher" />
+>>>>>>> 3ec7e9a98f9423d848878f71e175bc25e3de035f
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:orientation="horizontal" >
 
         <ImageView
@@ -93,5 +107,60 @@ android:background="#ffffff">
         android:layout_marginRight="10dp"
         android:background="#ff6633"/>
 </LinearLayout>
+=======
+        android:layout_below="@+id/iv_launcher_logo"
+        android:layout_margin="20dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_user_acount_first_enter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/et_origin_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="请输入您的初始密码"
+                android:inputType="textPassword" />
+
+            <EditText
+                android:id="@+id/et_confirm_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:hint="再次确认输入初始密码"
+                android:inputType="textPassword" />
+        </LinearLayout>
+
+
+        <EditText
+            android:id="@+id/et_after_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入密码"
+            android:inputType="textPassword"
+            android:visibility="gone" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/enter_security_box"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/ll_user_acount"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/sign_in_normal"
+        android:gravity="center"
+        android:onClick="true"
+        android:padding="0dp"
+        android:text="登录"
+        android:textColor="#ffffff"
+        android:textSize="24sp" />
+
+>>>>>>> 3ec7e9a98f9423d848878f71e175bc25e3de035f
 
 </RelativeLayout>

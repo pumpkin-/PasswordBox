@@ -5,6 +5,7 @@
     tools:context=".MainActivity"
     android:orientation="vertical">
 
+<<<<<<< HEAD
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="50dp" >
@@ -42,5 +43,12 @@
         android:layout_marginTop="10dp"
         android:background="#ffffff" >
     </ListView>
+=======
+
+    <FrameLayout
+        android:id="@+id/frg_password_box_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+>>>>>>> 3ec7e9a98f9423d848878f71e175bc25e3de035f
 
 </LinearLayout>

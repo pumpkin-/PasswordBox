@@ -7,20 +7,27 @@ import android.database.sqlite.SQLiteOpenHelper;
 /**
  * Created by Administrator on 2015/9/22.
  */
-public class DBHelper extends SQLiteOpenHelper{
+public class DBHelper extends SQLiteOpenHelper {
 
+    //
+    private static int DATABASE_VERSION = 1; //2015.9.22
     private Context context;
 
+
+    //密码箱数据库
     private static String DATABASE_NAME = "security_box.db";
-    private static String TABLE_SECURITY_BOX = "security_box";
-    private static int DATABASE_VERSION =  1; //2015.9.22
+    //密码箱数据库表
+    public static String TABLE_SECURITY_BOX = "security_box";
+    //密码箱数据库-账户名
+    public static String COLUMN_SECURITY_BOX_NAME = "acount_name";
 
+    public static String COLUMN_SECURITY_BOX_OBJECT = "security_box_object";
 
-    private DBHelper helper = null;
+    private static DBHelper helper = null;
 
     //获取DBHelper的实例
-    public DBHelper newInstance(Context context) {
-        if(helper == null) {
+    public static DBHelper newInstance(Context context) {
+        if (helper == null) {
             helper = new DBHelper(context);
         }
         return helper;
@@ -38,9 +45,11 @@ public class DBHelper extends SQLiteOpenHelper{
         synchronized (helper) {
             try {
                 // 用户保险箱信息表
-                db.execSQL("CREATE TABLE IF NOT EXISTS "+ TABLE_SECURITY_BOX
-                        + "(key_id INTEGER PRIMARY KEY , security_box_object BLOB)");
-            } catch(Exception e) {
+                db.execSQL("CREATE TABLE IF NOT EXISTS " + TABLE_SECURITY_BOX
+                        + "( "
+                        + COLUMN_SECURITY_BOX_NAME + " CHAR ,"
+                        + COLUMN_SECURITY_BOX_OBJECT + " BLOB)");
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
@@ -51,8 +60,8 @@ public class DBHelper extends SQLiteOpenHelper{
         synchronized (helper) {
             try {
                 // 用户保险箱信息表
-                db.execSQL("DROP TABLE IF EXISTS "+ TABLE_SECURITY_BOX);
-            } catch(Exception e) {
+                db.execSQL("DROP TABLE IF EXISTS " + TABLE_SECURITY_BOX);
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
