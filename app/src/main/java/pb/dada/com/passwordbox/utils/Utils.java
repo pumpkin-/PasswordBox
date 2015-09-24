@@ -3,11 +3,13 @@ package pb.dada.com.passwordbox.utils;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.util.Base64;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.UnsupportedEncodingException;
 
 /**
  * Created by Administrator on 2015/9/22.
@@ -68,6 +70,36 @@ public class Utils {
         ois.close();
 
        return t;
+    }
+
+    // 加密
+    public static String encodeBase64(String str) {
+        byte[] bytes = null;
+        String encodeStr = null;
+        try {
+            bytes = str.getBytes("utf-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        if (bytes != null) {
+            encodeStr = Base64.encodeToString(bytes, Base64.DEFAULT);
+        }
+        return encodeStr;
+    }
+
+    // 解密
+    public static String decodeBase64(String str) {
+        byte[] bytes = null;
+        String decodeStr = null;
+        try {
+            bytes = str.getBytes("utf-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        if (bytes != null) {
+            decodeStr = Base64.decode(bytes, Base64.DEFAULT).toString();
+        }
+        return decodeStr;
     }
 
 }

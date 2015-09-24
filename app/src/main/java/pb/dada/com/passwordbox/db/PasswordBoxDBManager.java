@@ -14,7 +14,7 @@ import pb.dada.com.passwordbox.utils.Utils;
 /**
  * Created by Administrator on 2015/9/22.
  */
-public class DBManager {
+public class PasswordBoxDBManager {
 
     private static SQLiteDatabase db = null;
 
