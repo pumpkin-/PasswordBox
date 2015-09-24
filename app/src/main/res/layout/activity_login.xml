@@ -1,7 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="#ffffff">
+
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="80dp"
+        android:src="@mipmap/img_password_box_iclauncher" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="50dp"
+        android:background="#eae9e9" />
+=======
     android:background="#ffffff">
 
 
@@ -12,11 +34,80 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:src="@mipmap/img_password_box_iclauncher" />
+>>>>>>> 3ec7e9a98f9423d848878f71e175bc25e3de035f
 
     <LinearLayout
-        android:id="@+id/ll_user_acount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/account" />
+
+        <EditText
+        android:id="@+id/et_username"
+        android:layout_width="fill_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_height="50dp"
+        android:background="#ffffff"
+        android:hint="帐号"
+        android:selectAllOnFocus="false"
+        android:textColor="@android:color/black" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#eae9e9" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/account" />
+
+        <EditText
+        android:id="@+id/et_password"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="#ffffff"
+        android:paddingLeft="10dp"
+        android:hint="密码"
+        android:selectAllOnFocus="false"
+        android:password="true"
+        android:textColor="@android:color/black" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#eae9e9" />
+
+    <Button
+        android:id="@+id/enter_security_box"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="登 录"
+        android:textColor="@android:color/white"
+        android:textSize="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="#ff6633"/>
+</LinearLayout>
+=======
         android:layout_below="@+id/iv_launcher_logo"
         android:layout_margin="20dp"
         android:orientation="vertical">
@@ -70,5 +161,6 @@
         android:textColor="#ffffff"
         android:textSize="24sp" />
 
+>>>>>>> 3ec7e9a98f9423d848878f71e175bc25e3de035f
 
 </RelativeLayout>
