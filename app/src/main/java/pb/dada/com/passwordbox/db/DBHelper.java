@@ -16,9 +16,15 @@ public class DBHelper extends SQLiteOpenHelper {
 
     //密码箱数据库
     private static String DATABASE_NAME = "security_box.db";
-    //密码箱数据库表
+
+    //用户表
+    public static String TABLE_USER = "user";
+    //用户表-密码
+    public static String COLUMN_USER_PASSWORD = "password";
+
+    //密码箱表
     public static String TABLE_SECURITY_BOX = "security_box";
-    //密码箱数据库-账户名
+    //密码箱表-账户名
     public static String COLUMN_SECURITY_BOX_NAME = "acount_name";
 
     public static String COLUMN_SECURITY_BOX_OBJECT = "security_box_object";
@@ -44,11 +50,16 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         synchronized (helper) {
             try {
-                // 用户保险箱信息表
+                // 密码箱表
                 db.execSQL("CREATE TABLE IF NOT EXISTS " + TABLE_SECURITY_BOX
                         + "( "
                         + COLUMN_SECURITY_BOX_NAME + " CHAR ,"
                         + COLUMN_SECURITY_BOX_OBJECT + " BLOB)");
+
+                // 用户表
+                db.execSQL("CREATE TABLE IF NOT EXISTS " + TABLE_USER
+                        + "( "
+                        + COLUMN_USER_PASSWORD + " CHAR)");
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -59,8 +70,11 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         synchronized (helper) {
             try {
-                // 用户保险箱信息表
+                // 密码箱表
                 db.execSQL("DROP TABLE IF EXISTS " + TABLE_SECURITY_BOX);
+
+                // 用户表
+                db.execSQL("DROP TABLE IF EXISTS " + TABLE_USER);
             } catch (Exception e) {
                 e.printStackTrace();
             }
