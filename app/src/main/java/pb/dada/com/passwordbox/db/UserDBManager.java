@@ -6,5 +6,6 @@ package pb.dada.com.passwordbox.db;
 public class UserDBManager {
 
     //用户表数据库
+    private String helloworld = "";
 
 }
